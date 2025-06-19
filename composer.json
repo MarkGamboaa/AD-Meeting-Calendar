@@ -1,0 +1,21 @@
+{
+    "name": "markgamboaa/ad-meeting-calendar",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Markgamboa\\AdMeetingCalendar\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MarkGamboaa",
+            "email": "202310110@fit.edu.ph"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "scripts": {
+        "postgresql:reset": "php utils/dbResetPostgresql.util.php"
+    }
+}
