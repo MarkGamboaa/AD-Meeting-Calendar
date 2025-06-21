@@ -5,17 +5,14 @@ if (!defined('BASE_PATH')) {
 }
 require_once BASE_PATH . '/vendor/autoload.php';
 
-// Load .env
 $dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
 $dotenv->load();
 
-// MongoDB config
 $mongoConfig = [
     'uri' => $_ENV['MONGO_URI'],
     'db' => $_ENV['MONGO_DB']
 ];
 
-// PostgreSQL config
 $pgConfig = [
     'host' => $_ENV['PG_HOST'],
     'port' => $_ENV['PG_PORT'],

@@ -1,20 +1,17 @@
 <?php
 declare(strict_types=1);
 
-// BASE_PATH should be defined if not yet
+
 if (!defined('BASE_PATH')) {
     define('BASE_PATH', __DIR__ . '/../');
 }
 
-// 1) Composer autoload
 require BASE_PATH . 'vendor/autoload.php';
 
-// 2) (Optional) Composer bootstrap (if you have it)
 if (file_exists(BASE_PATH . 'bootstrap.php')) {
     require BASE_PATH . 'bootstrap.php';
 }
 
-// 3) Load env
 require_once BASE_PATH . 'utils/envSetter.util.php';
 
 echo "✅ Connected to PostgreSQL.\n";
@@ -44,7 +41,6 @@ foreach ($schemaFiles as $file) {
 }
 
 echo "🔁 Truncating tables…\n";
-// Be sure to TRUNCATE in dependency-safe order (child → parent)
 $tables = ['meeting_users', 'tasks', 'meetings', 'users'];
 foreach ($tables as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
