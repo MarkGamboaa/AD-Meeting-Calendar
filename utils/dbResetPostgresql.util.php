@@ -1,16 +1,12 @@
 <?php
 declare(strict_types=1);
 
+require_once 'bootstrap.php';
 
-if (!defined('BASE_PATH')) {
-    define('BASE_PATH', __DIR__ . '/../');
-}
 
 require VENDOR_PATH . 'autoload.php';
 
-if (file_exists(BASE_PATH . 'bootstrap.php')) {
-    require BASE_PATH . 'bootstrap.php';
-}
+
 
 require_once UTILS_PATH . 'envSetter.util.php';
 
